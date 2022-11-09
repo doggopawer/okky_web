@@ -1,9 +1,11 @@
-import Main from "./pages/Main";
+import Frame from "./pages/Frame";
+import Logo from "./components/header/item/Logo";
+import MainContent from "./components/main-content/MainContent";
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <Frame content={<MainContent/>}/>
     </div>
   );
 }
