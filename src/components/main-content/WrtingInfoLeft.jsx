@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-const GalleryHead = styled.div`
-  height: 64px;
-  background: gold;
+const WritingLeft = styled.div`
+  width: auto;
+  height: 20px;
+  
 
+  display: flex;
+  justify-content: space-between;
   // 1024px 이하
   @media only screen and (max-width: 1024px) {
   }
@@ -12,4 +15,4 @@ const GalleryHead = styled.div`
   }
 `;
 
-export default GalleryHead;
+export default WritingLeft;

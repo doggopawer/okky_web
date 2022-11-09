@@ -1,15 +1,15 @@
-import Wrapper from "./box/Wrapper";
-import Whole from "./box/Whole";
-import Left from "./box/Left";
-import Right from "./box/Right";
-import Logo from "./item/Logo";
-import Gnb from "./item/Gnb";
-import SearchTextDeco from "./item/SearchTextDeco";
-import SignInBtn from "./item/SignInBtn";
-import SignUpBtn from "./item/SignUpBtn";
-import NavBtn from "./item/NavBtn";
-import GnbItem from "./item/GnbItem";
-import SearchText from "./item/SearchText";
+import Wrapper from "./Wrapper";
+import Whole from "./Whole";
+import Left from "./Left";
+import Right from "./Right";
+import Logo from "./Logo";
+import Gnb from "./Gnb";
+import SearchTextDeco from "./SearchTextDeco";
+import SignInBtn from "./SignInBtn";
+import SignUpBtn from "./SignUpBtn";
+import NavBtn from "./NavBtn";
+import GnbItem from "./GnbItem";
+import SearchText from "./SearchText";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass, faBars} from "@fortawesome/free-solid-svg-icons";
 

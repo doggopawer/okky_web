@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   margin-top: 20px;
   width: 100%;
-  height: 1800px;
+  height: 1400px;
   border-bottom: 1px solid lightgray;
   
   /* 가운데 정렬  */

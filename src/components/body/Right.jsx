@@ -5,7 +5,6 @@ const Right = styled.div`
   flex-shrink: 0;
   height: 100%;
   
-  background: blue;
   
 
   // 1280px 이하

@@ -1,5 +1,5 @@
 import Frame from "./pages/Frame";
-import Logo from "./components/header/item/Logo";
+import Logo from "./components/header/Logo";
 import MainContent from "./components/main-content/MainContent";
 
 function App() {

@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-const TagRank = styled.div`
+const TagRankItem = styled.div`
   width: 100%;
-  height: 230px;
+  height: 16px;
   margin-bottom: 32px;
-  background: lightpink;
   
 
-  // 1024px 이하
+  // 1280px 이하
   @media only screen and (max-width: 1024px) {
     display: none;
   }
@@ -16,4 +15,4 @@ const TagRank = styled.div`
   }
 `;
 
-export default TagRank;
+export default TagRankItem;

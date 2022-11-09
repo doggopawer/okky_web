@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ContentWrapper = styled.div`
   width: 90%;
   height: 100%;
-  background: honeydew;
 
   // 1024px 이하
   @media only screen and (max-width: 1024px) {

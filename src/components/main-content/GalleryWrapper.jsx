@@ -7,8 +7,6 @@ const GalleryWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   
-  background: chocolate;
-
   // 1024px 이하
   @media only screen and (max-width: 1024px) {
     
@@ -16,6 +14,7 @@ const GalleryWrapper = styled.div`
   // 768px 이하
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 

@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
-const LeftAd = styled.div`
+const BugReport = styled.div`
   width: 100%;
-  height: 180px;
+  height: 64px;
+  border-radius: 7.5px;
   margin-bottom: 32px;
-  background: orchid;
+  background: #eff6ff;
+  
+  display: flex;
+  align-items: center;
 
   // 1280px 이하
   @media only screen and (max-width: 1024px) {
-    width: 640px;
-    height: 200px;
+    width: 90vw;
   }
   // 768px 이하
   @media only screen and (max-width: 768px) {
-    width: 90vw;
-    height: 23vw;
   }
 `;
 
-export default LeftAd;
+export default BugReport;

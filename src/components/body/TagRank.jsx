@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
-const GalleryItem = styled.li`
+const TagRank = styled.div`
   width: 100%;
-  height: 80px;
+  height: 230px;
+  margin-bottom: 32px;
   
-  background: steelblue;
 
   // 1024px 이하
   @media only screen and (max-width: 1024px) {
+    display: none;
   }
   // 768px 이하
   @media only screen and (max-width: 768px) {
   }
 `;
 
-export default GalleryItem;
+export default TagRank;

@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
-const Center = styled.div`
-  width: 896px;
-  height: 100%;
+const GalleryHead = styled.div`
+  height: 64px;
+  border-radius: 10px;
+  background: darkgray;
   
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  background: tomato;
-  
-
   // 1024px 이하
   @media only screen and (max-width: 1024px) {
   }
@@ -18,4 +16,4 @@ const Center = styled.div`
   }
 `;
 
-export default Center;
+export default GalleryHead;

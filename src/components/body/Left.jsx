@@ -4,7 +4,6 @@ const Left = styled.div`
   flex-basis: 180px;
   flex-shrink: 0;
   height: 100%;
-  background: blueviolet;
   
 
   // 1280px 이하

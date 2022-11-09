@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logoImg from "../../../resources/okky-munchkin-logo.svg";
+import logoImg from "../../resources/okky-munchkin-logo.svg";
 
 const Logo = styled.div`
   width: 115px;

@@ -7,7 +7,6 @@ const Whole = styled.div`
   justify-content: center;
   align-items: center;
   
-  background: darkgreen;
   
   // 1280px 이하
   @media only screen and (max-width: 1280px) {
