@@ -1,6 +1,5 @@
-import Frame from "./pages/Frame";
-import Logo from "./components/header/Logo";
-import MainContent from "./components/main-content/MainContent";
+import Frame from "./components/layouts/Frame";
+import MainContent from "./components/layouts/MainContent";
 
 function App() {
   return (
