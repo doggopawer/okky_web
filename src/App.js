@@ -1,10 +1,9 @@
-import GalleryPage from "./components/pages/GalleryPage";
-import MainPage from "./components/pages/MainPage";
+import SignInPage from "./components/pages/SignInPage";
 
 function App() {
   return (
     <div className="App">
-        <MainPage/>
+        <SignInPage/>
     </div>
   );
 }

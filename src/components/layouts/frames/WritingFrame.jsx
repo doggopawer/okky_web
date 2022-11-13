@@ -1,7 +1,7 @@
-import Header from "./Header";
-import Body from "./Body";
+import Header from "../Header";
+import Body from "../Body";
 import styled from "styled-components";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 
 const Wrapper = styled.div`
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-function Frame ({content}) {
+function WritingFrame ({content}) {
 
     return (
         <Wrapper>
@@ -20,4 +20,4 @@ function Frame ({content}) {
     )
 }
 
-export default Frame;
+export default WritingFrame;

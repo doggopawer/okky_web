@@ -1,9 +1,9 @@
-import Frame from "../layouts/Frame";
-import GalleryContent from "../layouts/GalleryContent";
+import WritingFrame from "../layouts/frames/WritingFrame";
+import GalleryContent from "../layouts/contents/GalleryContent";
 
 const GalleryPage = () => {
 
-    return <Frame content={<GalleryContent/>}/>
+    return <WritingFrame content={<GalleryContent/>}/>
 }
 
 export default GalleryPage;

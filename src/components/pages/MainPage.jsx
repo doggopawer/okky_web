@@ -1,9 +1,9 @@
-import Frame from "../layouts/Frame";
-import MainContent from "../layouts/MainContent";
+import WritingFrame from "../layouts/frames/WritingFrame";
+import MainContent from "../layouts/contents/MainContent";
 
 const MainPage = () => {
 
-    return <Frame content={<MainContent/>}/>
+    return <WritingFrame content={<MainContent/>}/>
 }
 
 export default MainPage;

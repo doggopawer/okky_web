@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import BigMenuItem from "../domains/gallery/BigMenuItem";
-import WritingCreateMove from "../domains/gallery/WritingCreateMove";
-import SmallMenuList from "../domains/gallery/SmallMenuList";
-import OrderBySelect from "../domains/gallery/OrderBySelect";
-import WritingListReset from "../domains/gallery/WritingListReset";
-import WritingListSearch from "../domains/gallery/WritingListSearch";
-import LongWritingList from "../domains/gallery/LongWritingList";
+import BigMenuItem from "../../domains/gallery/BigMenuItem";
+import WritingCreateMove from "../../domains/gallery/WritingCreateMove";
+import SmallMenuList from "../../domains/gallery/SmallMenuList";
+import OrderBySelect from "../../domains/gallery/OrderBySelect";
+import WritingListReset from "../../domains/gallery/WritingListReset";
+import WritingListSearch from "../../domains/gallery/WritingListSearch";
+import LongWritingList from "../../domains/gallery/LongWritingList";
 
 const Wrapper = styled.div`
   width: 90%;

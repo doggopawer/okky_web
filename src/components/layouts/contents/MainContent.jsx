@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import WritingList from "../domains/main/WritingList";
+import WritingList from "../../domains/main/WritingList";
 
 const Wrapper = styled.div`
   width: 90%;

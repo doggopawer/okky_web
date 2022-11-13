@@ -117,7 +117,7 @@ const Comment = styled.span`
 `
 
 
-const WritingList = ({}) => {
+const WritingList = () => {
     // 리액트 쿼리 훅
     const data = [
         {
