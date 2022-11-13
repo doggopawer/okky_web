@@ -43,6 +43,8 @@ const End = styled.div`
 const Center = styled.div`
   margin-top: 30px;
   text-align: center;
+  color: #111827;
+  font-size: 14px;
 `
 const MemberAuth = () => {
     // 리액트 쿼리 훅
@@ -64,7 +66,7 @@ const MemberAuth = () => {
             </End>
             <Button>로그인</Button>
             <Center>
-                <SignUpMove/>
+                아직 회원이 아니신가요? <SignUpMove/>
             </Center>
         </Wrapper>
     )
