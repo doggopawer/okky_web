@@ -1,10 +1,10 @@
-import Frame from "./components/layouts/Frame";
-import MainContent from "./components/layouts/MainContent";
+import GalleryPage from "./components/pages/GalleryPage";
+import MainPage from "./components/pages/MainPage";
 
 function App() {
   return (
     <div className="App">
-      <Frame content={<MainContent/>}/>
+        <MainPage/>
     </div>
   );
 }

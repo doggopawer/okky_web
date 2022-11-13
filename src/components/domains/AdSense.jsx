@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Image = styled.img`
   display: inline-block;
-  width: 100%;
+  width: 90%;
   height: 160px;
   margin-bottom: 32px;
   background: ${props=> props.ad === null ? 'lightgray' : props.ad};

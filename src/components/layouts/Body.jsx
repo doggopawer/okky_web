@@ -1,14 +1,14 @@
-import TagRankList from "../domains/TagRankList";
+import TagRankList from "../domains/body/TagRankList";
 import AdSense from "../domains/AdSense";
-import BugReportMove from "../domains/BugReportMove";
-import WriterRankList from "../domains/WriterRankList";
+import BugReportMove from "../domains/body/BugReportMove";
+import WriterRankList from "../domains/body/WriterRankList";
 import styled from "styled-components";
 
 
 const Wrapper = styled.div`
   margin-top: 20px;
   width: 100%;
-  height: auto;
+  height: 100%;
   border-bottom: 1px solid lightgray;
   
   /* 가운데 정렬  */

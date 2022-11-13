@@ -19,7 +19,9 @@ const Head = styled.div`
   height: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid lightgray;
-  
+  color: #111827;
+  font-size: 14px;
+  font-weight: bolder;
 
   // 1280px 이하
   @media only screen and (max-width: 1024px) {
@@ -31,8 +33,13 @@ const Head = styled.div`
 const Item = styled.li`
   width: 100%;
   height: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   list-style: none;
+  color: #111827;
+  font-size: 14px;
+  
+  display: flex;
+  justify-content: space-between;
 
   // 1280px 이하
   @media only screen and (max-width: 1024px) {
@@ -42,33 +49,47 @@ const Item = styled.li`
   @media only screen and (max-width: 768px) {
   }
 `;
+const Name = styled.div`
+  color: #111827;
+  font-weight: 500;
+`
+const Amount = styled.div`
+  color: #0090f9;
+  font-weight: 500;
+`
 
 const TagRankList = () => {
     // 리액트 쿼리 훅
     const data = [
         {
-            name: "java"
+            name: "java",
+            amount: 52
         },
         {
-            name: "java"
+            name: "javascript",
+            amount: 46
         },
         {
-            name: "java"
+            name: "spring",
+            amount: 34,
         },
         {
-            name: "java"
+            name: "springboot",
+            amount: 27,
         },
         {
-            name: "java"
+            name: "react",
+            amount: 26,
         },
     ]
     return (
         <Wrapper>
             <Head>#인기 태그</Head>
             {
-                data.map(({name}) => (
+                data.map(({name, amount}) => (
                     <Item>
-                       # {name}
+                       <Name># {name}</Name>
+                        <Amount>{amount}</Amount>
                     </Item>
                 ))
             }

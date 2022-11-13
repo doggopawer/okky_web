@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowsUpDown, faBolt, faCommentDots} from "@fortawesome/free-solid-svg-icons";
-import QuestionsImg from "../../resources/questions.svg";
+import QuestionsImg from "../../../resources/questions.svg";
 
 
 const Wrapper = styled.div`
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const Head = styled.div`
   height: 64px;
   border-radius: 10px;
-  background: darkgray;
+  background: #dae2f0;
   
   display: flex;
   justify-content: space-around;
@@ -161,7 +161,7 @@ const Comment = styled.span`
 `
 
 
-const WritingList = () => {
+const WritingList = ({}) => {
     // 리액트 쿼리 훅
     const data = [
         {
@@ -233,10 +233,10 @@ const WritingList = () => {
                                 </Left>
                                 <Right>
                                     <Like>
-                                        <FontAwesomeIcon icon={faArrowsUpDown}/>0
+                                        <FontAwesomeIcon icon={faArrowsUpDown}/>&nbsp;0
                                     </Like>
                                     <Comment>
-                                        <FontAwesomeIcon icon={faCommentDots}/>0
+                                        <FontAwesomeIcon icon={faCommentDots}/>&nbsp;0
                                     </Comment>
                                 </Right>
                             </FirstLine>

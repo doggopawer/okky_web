@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import logoImg from "../../resources/okky-munchkin-logo.svg";
-import FaceBookMove from "../domains/FaceBookMove";
-import YoutubeMove from "../domains/YoutubeMove";
-import EmailMove from "../domains/EmailMove";
-import CompanyMove from "../domains/CompanyMove";
-import NoticeMove from "../domains/NoticeMove";
-import ContactMove from "../domains/ContactMove";
-import InquiryMove from "../domains/InquiryMove";
-import RecruitMove from "../domains/RecruitMove";
-import BugMove from "../domains/BugMove";
-import PolicyMove from "../domains/PolicyMove";
-import TermsMove from "../domains/TermsMove";
+import FaceBookMove from "../domains/footer/FaceBookMove";
+import YoutubeMove from "../domains/footer/YoutubeMove";
+import EmailMove from "../domains/footer/EmailMove";
+import CompanyMove from "../domains/footer/CompanyMove";
+import NoticeMove from "../domains/footer/NoticeMove";
+import ContactMove from "../domains/footer/ContactMove";
+import InquiryMove from "../domains/footer/InquiryMove";
+import RecruitMove from "../domains/footer/RecruitMove";
+import BugMove from "../domains/footer/BugMove";
+import PolicyMove from "../domains/footer/PolicyMove";
+import TermsMove from "../domains/footer/TermsMove";
 
 const Wrapper = styled.div`
   width: 100%;

@@ -1,8 +1,8 @@
-import SignInMove from "../domains/SignInMove";
-import SignUpMove from "../domains/SignUpMove";
-import BigMenuList from "../domains/BigMenuList";
-import GoogleSearchMove from "../domains/GoogleSearchMove";
-import BigMenuModalShow from "../domains/BigMenuModalShow";
+import SignInMove from "../domains/header/SignInMove";
+import SignUpMove from "../domains/header/SignUpMove";
+import BigMenuList from "../domains/header/BigMenuList";
+import GoogleSearchMove from "../domains/header/GoogleSearchMove";
+import BigMenuModalShow from "../domains/header/BigMenuModalShow";
 import styled from "styled-components";
 import logoImg from "../../resources/okky-munchkin-logo.svg"
 
