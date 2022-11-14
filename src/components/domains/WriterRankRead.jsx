@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrophy} from "@fortawesome/free-solid-svg-icons";
 
-const Wrapper = styled.div`
+const WriterRankList = styled.div`
   width: 100%;
   height: 237px;
   margin-bottom: 32px;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Head = styled.div`
+const WriterRankHead = styled.div`
   width: 100%;
   height: 20px;
   padding-bottom: 10px;
@@ -34,7 +34,7 @@ const Head = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Item = styled.div`
+const WriterRankReadItem = styled.div`
   width: 100%;
   height: 16px;
   margin-bottom: 20px;
@@ -50,27 +50,27 @@ const Item = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const ProfileNick = styled.div`
+const WriterRankReadBox = styled.div`
   display: flex;
   align-items: center;
 `;
-const Profile = styled.img`
+const WriterRankReadProfileImg = styled.img`
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-size: cover;
 `
-const Nick = styled.div`
+const WriterRankReadNickSpan = styled.span`
   font-size: 12px;
   color: #111827;
 `;
-const Score = styled.div`
+const WriterRankReadScoreSpan = styled.span`
   color: #374151;
   font-size: 12px;  
 `;
 
 
-const WriterRankList = () => {
+const WriterRankRead = () => {
     // 리액트 훅
     const data = [
         {
@@ -100,23 +100,23 @@ const WriterRankList = () => {
         },
     ]
   return (
-      <Wrapper>
-          <Head>Top Writers</Head>
+      <WriterRankList>
+          <WriterRankHead>Top Writers</WriterRankHead>
           {
               data.map(({profile,nick, score })=> (
-                  <Item>
-                      <ProfileNick>
-                          <Profile src={profile}/>
-                          <Nick>{nick}</Nick>
-                      </ProfileNick>
-                      <Score>
+                  <WriterRankReadItem>
+                      <WriterRankReadBox>
+                          <WriterRankReadProfileImg src={profile}/>
+                          <WriterRankReadNickSpan>{nick}</WriterRankReadNickSpan>
+                      </WriterRankReadBox>
+                      <WriterRankReadScoreSpan>
                           <FontAwesomeIcon icon={faTrophy}/>
                           &nbsp;{score}
-                      </Score>
-                  </Item>
+                      </WriterRankReadScoreSpan>
+                  </WriterRankReadItem>
               ))
           }
-      </Wrapper>
+      </WriterRankList>
   )
 }
-export default WriterRankList;
+export default WriterRankRead;

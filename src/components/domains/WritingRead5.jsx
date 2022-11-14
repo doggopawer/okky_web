@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowsUpDown, faBolt, faCommentDots} from "@fortawesome/free-solid-svg-icons";
-import QuestionsImg from "../../../resources/questions.svg";
+import QuestionsImg from "../../resources/questions.svg";
 
 
-const Wrapper = styled.div`
+const WritingReadLayout = styled.div`
   width: 47%;
   height: 452px;
   
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     width: 100vw;
   }
 `;
-const Head = styled.div`
+const WritingReadBox = styled.div`
   height: 64px;
   border-radius: 10px;
   background: #dae2f0;
@@ -31,7 +31,7 @@ const Head = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const HeadLeft = styled.div`
+const WritingReadBox2 = styled.div`
   display: inline-block;
   font-weight: bold;
   font-size: 18px;
@@ -43,7 +43,7 @@ const HeadLeft = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const HeadRight = styled.div`
+const WritingReadBox3 = styled.div`
   width: 145px;
   height: 68px;
   border-radius: 10px;
@@ -57,12 +57,12 @@ const HeadRight = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Body = styled.div`
+const WritingReadList = styled.ul`
   
 `
 
 
-const Item = styled.li`
+const WritingReadItem = styled.li`
   width: 100%;
   height: 80px;
   border-bottom: 1px solid lightgray;
@@ -77,7 +77,7 @@ const Item = styled.li`
   @media only screen and (max-width: 768px) {}
 `;
 
-const FirstLine = styled.div`
+const WritingReadBox4 = styled.div`
   width: 100%;
   height: 20px;
   display: flex;
@@ -90,7 +90,7 @@ const FirstLine = styled.div`
   }
 `;
 
-const Left = styled.div`
+const WritingReadBox6 = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
@@ -101,7 +101,7 @@ const Left = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Right = styled.div`
+const WritingReadBox7 = styled.div`
   width: auto;
   height: 20px;
   display: flex;
@@ -113,47 +113,47 @@ const Right = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const SecondLine = styled.div`
+const WritingReadBox5 = styled.div`
   width: 100%;
   height: 20px;
 `
 
-const Title = styled.span`
+const WritingReadTitleText = styled.span`
   font-size: 16px;
   font-weight: 500;
   color: #000;
 `
 
 
-const Profile = styled.img`
+const WritingReadProfileImg = styled.img`
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-size: cover;
 `
-const Nick = styled.span`
+const WritingReadNickText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #111827;
 `
-const Score = styled.span`
+const WritingReadScoreText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #686868;
 `
-const Date = styled.span`
+const WritingReadDateText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #838383;
 `
-const Like = styled.span`
+const WritingReadLikeText = styled.span`
   font-size: 14px;
   color: #6b7280;
 `
-const Comment = styled.span`
+const WritingReadCommentText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
@@ -161,7 +161,7 @@ const Comment = styled.span`
 `
 
 
-const WritingList = () => {
+const WritingRead5 = () => {
     // 리액트 쿼리 훅
     const data = [
         {
@@ -212,46 +212,44 @@ const WritingList = () => {
     ]
 
     return (
-        <Wrapper>
-            <Head>
-                <HeadLeft>Q&A</HeadLeft>
-                <HeadRight/>
-            </Head>
-            <Body>
+        <WritingReadLayout>
+            <WritingReadBox>
+                <WritingReadBox2>Q&A</WritingReadBox2>
+                <WritingReadBox3/>
+            </WritingReadBox>
+            <WritingReadList>
                 {
                     data.map(({profile, nick, score, created_at, like_amount, comment_amount, title })=> (
-                        <Item>
-                            <FirstLine>
-                                <Left>
-                                    <Profile src={profile}/>
-                                    <Nick>{nick}</Nick>
-                                    <Score>
+                        <WritingReadItem>
+                            <WritingReadBox4>
+                                <WritingReadBox6>
+                                    <WritingReadProfileImg src={profile}/>
+                                    <WritingReadNickText>{nick}</WritingReadNickText>
+                                    <WritingReadScoreText>
                                         <FontAwesomeIcon icon={faBolt}/>
                                         {score}
-                                    </Score>
-                                    <Date>{created_at}</Date>
-                                </Left>
-                                <Right>
-                                    <Like>
+                                    </WritingReadScoreText>
+                                    <WritingReadDateText>{created_at}</WritingReadDateText>
+                                </WritingReadBox6>
+                                <WritingReadBox7>
+                                    <WritingReadLikeText>
                                         <FontAwesomeIcon icon={faArrowsUpDown}/>&nbsp;0
-                                    </Like>
-                                    <Comment>
+                                    </WritingReadLikeText>
+                                    <WritingReadCommentText>
                                         <FontAwesomeIcon icon={faCommentDots}/>&nbsp;0
-                                    </Comment>
-                                </Right>
-                            </FirstLine>
-                            <SecondLine>
-                                <Title>
-                                    {title}
-                                </Title>
-                            </SecondLine>
-                        </Item>
+                                    </WritingReadCommentText>
+                                </WritingReadBox7>
+                            </WritingReadBox4>
+                            <WritingReadBox5>
+                                <WritingReadTitleText>{title}</WritingReadTitleText>
+                            </WritingReadBox5>
+                        </WritingReadItem>
                     ))
                 }
-            </Body>
+            </WritingReadList>
 
-        </Wrapper>
+        </WritingReadLayout>
     )
 }
 
-export default WritingList;
+export default WritingRead5;

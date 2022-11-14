@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const TagRankReadList = styled.div`
   width: 100%;
   height: 230px;
   margin-bottom: 32px;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Head = styled.div`
+const TagRankReadHead = styled.div`
   width: 100%;
   height: 20px;
   margin-bottom: 20px;
@@ -30,7 +30,7 @@ const Head = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Item = styled.li`
+const TagRankReadItem = styled.li`
   width: 100%;
   height: 16px;
   margin-bottom: 20px;
@@ -58,7 +58,7 @@ const Amount = styled.div`
   font-weight: 500;
 `
 
-const TagRankList = () => {
+const TagRankRead = () => {
     // 리액트 쿼리 훅
     const data = [
         {
@@ -83,18 +83,18 @@ const TagRankList = () => {
         },
     ]
     return (
-        <Wrapper>
-            <Head>#인기 태그</Head>
+        <TagRankReadList>
+            <TagRankReadHead>#인기 태그</TagRankReadHead>
             {
                 data.map(({name, amount}) => (
-                    <Item>
+                    <TagRankReadItem>
                        <Name># {name}</Name>
                         <Amount>{amount}</Amount>
-                    </Item>
+                    </TagRankReadItem>
                 ))
             }
-        </Wrapper>
+        </TagRankReadList>
     )
 }
 
-export default TagRankList;
+export default TagRankRead;

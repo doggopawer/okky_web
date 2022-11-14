@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MemberAuth from "../../domains/sign-in/MemberAuth";
+import MemberAuth from "../../domains/MemberAuth";
 
 const Wrapper = styled.div`
   width: 100%;

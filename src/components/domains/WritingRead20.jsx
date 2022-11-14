@@ -117,7 +117,7 @@ const Comment = styled.span`
 `
 
 
-const WritingList = () => {
+const WritingRead20 = () => {
     // 리액트 쿼리 훅
     const data = [
         {
@@ -341,4 +341,4 @@ const WritingList = () => {
     )
 }
 
-export default WritingList;
+export default WritingRead20;

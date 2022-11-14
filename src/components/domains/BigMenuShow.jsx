@@ -3,7 +3,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-const Button = styled.button`
+const BigMenuShowButton = styled.button`
   display:none;
   // 1024px 이하
   @media only screen and (max-width: 1024px) {}
@@ -22,13 +22,13 @@ const Button = styled.button`
   }
 `;
 
-const BigMenuModalShow = () => {
+const BigMenuShow = () => {
     // 리액트 훅
     return (
-        <Button>
+        <BigMenuShowButton>
             <FontAwesomeIcon icon={faBars} />
-        </Button>
+        </BigMenuShowButton>
     )
 }
 
-export default BigMenuModalShow;
+export default BigMenuShow;

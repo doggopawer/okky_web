@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import WritingList from "../../domains/main/WritingList";
+import WritingRead5 from "../../domains/WritingRead5";
 
-const Wrapper = styled.div`
+const MainContentLayout = styled.div`
   width: 90%;
   height: 100%;
 
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Layout = styled.div`
+const MainContentBox = styled.div`
   width: 100%;
   margin-bottom: 40px;
   
@@ -32,20 +32,20 @@ const Layout = styled.div`
 function MainContent() {
 
     return (
-            <Wrapper>
-                <Layout>
-                    <WritingList/>
-                    <WritingList/>
-                </Layout>
-                <Layout>
-                    <WritingList/>
-                    <WritingList/>
-                </Layout>
-                <Layout>
-                    <WritingList/>
-                    <WritingList/>
-                </Layout>
-            </Wrapper>
+            <MainContentLayout>
+                <MainContentBox>
+                    <WritingRead5/>
+                    <WritingRead5/>
+                </MainContentBox>
+                <MainContentBox>
+                    <WritingRead5/>
+                    <WritingRead5/>
+                </MainContentBox>
+                <MainContentBox>
+                    <WritingRead5/>
+                    <WritingRead5/>
+                </MainContentBox>
+            </MainContentLayout>
     )
 }
 

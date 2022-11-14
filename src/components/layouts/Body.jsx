@@ -1,11 +1,13 @@
-import TagRankList from "../domains/body/TagRankList";
+import TagRankRead from "../domains/TagRankRead";
 import AdSense from "../domains/AdSense";
-import BugReportMove from "../domains/body/BugReportMove";
-import WriterRankList from "../domains/body/WriterRankList";
+import WriterRankRead from "../domains/WriterRankRead";
 import styled from "styled-components";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBullhorn} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 
-const Wrapper = styled.div`
+const BodyLayout = styled.div`
   margin-top: 20px;
   width: 100%;
   height: 100%;
@@ -20,7 +22,7 @@ const Wrapper = styled.div`
     height: auto;
   }
 `;
-const Layout = styled.div`
+const BodyBox = styled.div`
   width: 1280px;
   height: 100%;
   display: flex;
@@ -38,7 +40,7 @@ const Layout = styled.div`
     align-items: center;
   }
 `;
-const Left = styled.div`
+const BodyLeftBox = styled.div`
   flex-basis: 180px;
   flex-shrink: 0;
   height: 100%;
@@ -55,7 +57,7 @@ const Left = styled.div`
   }
   
 `;
-const Center = styled.div`
+const BodyCenterBox = styled.div`
   
   width: 70vw;
   height: 100%;
@@ -71,7 +73,7 @@ const Center = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Right = styled.div`
+const BodyRightBox = styled.div`
   flex-basis: 180px;
   flex-shrink: 0;
   height: 100%;
@@ -83,26 +85,80 @@ const Right = styled.div`
   }
 `;
 
+const BodyLeftInnerBox = styled.div`
+  width: 100%;
+  height: 64px;
+  border-radius: 7.5px;
+  margin-bottom: 32px;
+  background: #eff6ff;
+  
+  display: flex;
+  align-items: center;
+
+  // 1280px 이하
+  @media only screen and (max-width: 1024px) {
+    width: 90vw;
+  }
+  // 768px 이하
+  @media only screen and (max-width: 768px) {
+  }
+`;
+const BodyBugReportLink = styled(Link)`
+  text-decoration: none;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  margin:6px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #a5d1f6;
+
+  // 1280px 이하
+  @media only screen and (max-width: 1024px) {
+  }
+  // 768px 이하
+  @media only screen and (max-width: 768px) {
+  }
+`;
+const BodyBugReportText = styled.span`
+  
+  font-size: 11.6px;
+
+  // 1280px 이하
+  @media only screen and (max-width: 1024px) {
+  }
+  // 768px 이하
+  @media only screen and (max-width: 768px) {
+  }
+`;
 
 function Body ({content}) {
 
     return (
-        <Wrapper>
-            <Layout>
-                <Left>
-                    <TagRankList/>
+        <BodyLayout>
+            <BodyBox>
+                <BodyLeftBox>
+                    <TagRankRead/>
                     <AdSense/>
-                    <BugReportMove/>
-                    <WriterRankList/>
-                </Left>
-                <Center>
+                    <BodyLeftInnerBox>
+                        <BodyBugReportLink>
+                            <FontAwesomeIcon icon={faBullhorn}/>
+                        </BodyBugReportLink>
+                        <BodyBugReportText>
+                            버그와 제안은 여기에 댓글로 남겨주세요
+                        </BodyBugReportText>
+                    </BodyLeftInnerBox>
+                    <WriterRankRead/>
+                </BodyLeftBox>
+                <BodyCenterBox>
                     <AdSense/>
                     {content}
-                </Center>
-                <Right>
-                </Right>
-            </Layout>
-        </Wrapper>
+                </BodyCenterBox>
+                <BodyRightBox>
+                </BodyRightBox>
+            </BodyBox>
+        </BodyLayout>
     )
 }
 

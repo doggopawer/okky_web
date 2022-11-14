@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MemberCreate from "../../domains/sign-up/MemberCreate";
+import MemberCreate from "../../domains/MemberCreate";
 
 const Wrapper = styled.div`
 
