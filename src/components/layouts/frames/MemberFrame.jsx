@@ -2,7 +2,7 @@ import Center from "../Center";
 import styled from "styled-components";
 
 
-const Wrapper = styled.div`
+const MemberFrameLayout = styled.div`
   display: flex;
   justify-content: center;
   margin: 8rem 0;
@@ -11,9 +11,9 @@ const Wrapper = styled.div`
 const MemberFrame = ({content}) => {
 
     return (
-        <Wrapper>
+        <MemberFrameLayout>
             <Center content={content}/>
-        </Wrapper>
+        </MemberFrameLayout>
     )
 }
 

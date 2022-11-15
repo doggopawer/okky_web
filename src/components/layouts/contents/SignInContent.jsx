@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MemberAuth from "../../domains/MemberAuth";
 
-const Wrapper = styled.div`
+const SignInLayout = styled.div`
   width: 100%;
   height: auto;
 `
@@ -9,9 +9,9 @@ const Wrapper = styled.div`
 
 const SignInContent = () => {
   return (
-      <Wrapper>
+      <SignInLayout>
             <MemberAuth/>
-      </Wrapper>
+      </SignInLayout>
   )
 }
 

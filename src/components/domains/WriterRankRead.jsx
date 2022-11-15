@@ -60,11 +60,11 @@ const WriterRankReadProfileImg = styled.img`
   border-radius: 50%;
   background-size: cover;
 `
-const WriterRankReadNickSpan = styled.span`
+const WriterRankReadNickText = styled.span`
   font-size: 12px;
   color: #111827;
 `;
-const WriterRankReadScoreSpan = styled.span`
+const WriterRankReadScoreText = styled.span`
   color: #374151;
   font-size: 12px;  
 `;
@@ -107,12 +107,12 @@ const WriterRankRead = () => {
                   <WriterRankReadItem>
                       <WriterRankReadBox>
                           <WriterRankReadProfileImg src={profile}/>
-                          <WriterRankReadNickSpan>{nick}</WriterRankReadNickSpan>
+                          <WriterRankReadNickText>{nick}</WriterRankReadNickText>
                       </WriterRankReadBox>
-                      <WriterRankReadScoreSpan>
+                      <WriterRankReadScoreText>
                           <FontAwesomeIcon icon={faTrophy}/>
                           &nbsp;{score}
-                      </WriterRankReadScoreSpan>
+                      </WriterRankReadScoreText>
                   </WriterRankReadItem>
               ))
           }

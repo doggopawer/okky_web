@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Footer from "../Footer";
 
 
-const Wrapper = styled.div`
+const WritingFrameLayout = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -12,11 +12,11 @@ const Wrapper = styled.div`
 function WritingFrame ({content}) {
 
     return (
-        <Wrapper>
+        <WritingFrameLayout>
             <Header/>
             <Body content={content}/>
             <Footer/>
-        </Wrapper>
+        </WritingFrameLayout>
     )
 }
 

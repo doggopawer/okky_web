@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowsUpDown, faBolt, faCommentDots} from "@fortawesome/free-solid-svg-icons";
+import {
+    faArrowsUpDown,
+    faBolt,
+    faCircleCheck,
+    faCommentDots,
+    faEye,
+} from "@fortawesome/free-solid-svg-icons";
+import WritingTagRead from "./WritingTagRead";
 
 
-const Wrapper = styled.div`
+const WritingReadLayout = styled.div`
   width: 100%;
   height: auto;
   // 1024px 이하
@@ -15,10 +22,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const Body = styled.div``;
+const WritingReadList = styled.ul``;
 
 
-const Item = styled.li`
+const WritingReadItem = styled.li`
   width: 100%;
   height: 117px;
   border-bottom: 1px solid lightgray;
@@ -33,7 +40,7 @@ const Item = styled.li`
   @media only screen and (max-width: 768px) {}
 `;
 
-const FirstLine = styled.div`
+const WritingReadFirstBox = styled.div`
   width: 100%;
   height: 20px;
   display: flex;
@@ -45,8 +52,24 @@ const FirstLine = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
+const WritingReadFirstLeftBox = styled.div`
+`;
+const WritingReadFirstRightBox = styled.div`
+`;
+const WritingReadAdoptText = styled.span`
+`;
 
-const Left = styled.div`
+const WritingReadSecondBox = styled.div`
+  width: 100%;
+  height: 20px;
+  margin: 10px 0;
+`
+const WritingReadThirdBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+const WritingReadThirdLeftBox = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
@@ -57,7 +80,7 @@ const Left = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Right = styled.div`
+const WritingReadThirdRightBox = styled.div`
   width: auto;
   height: 20px;
   display: flex;
@@ -69,56 +92,65 @@ const Right = styled.div`
   @media only screen and (max-width: 768px) {
   }
 `;
-const SecondLine = styled.div`
-  width: 100%;
-  height: 20px;
-`
-
-const Title = styled.span`
+const WritingReadTitleText = styled.span`
   font-size: 16px;
   font-weight: 500;
   color: #000;
 `
-
-
-const Profile = styled.img`
+const WritingReadProfileImg = styled.img`
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-size: cover;
 `
-const Nick = styled.span`
+const WritingReadNickText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #111827;
 `
-const Score = styled.span`
+const WritingReadScoreText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #686868;
 `
-const Date = styled.span`
+const WritingReadDateText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
   color: #838383;
 `
-const Like = styled.span`
+const WritingReadLikeText = styled.span`
   font-size: 14px;
-  color: #6b7280;
+  margin-left: 10px;
+  color: #374151;
 `
-const Comment = styled.span`
+const WritingReadCommentText = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
-  color: #6b7280;
+  color: #374151;
 `
+const WritingReadViewsText = styled.span`
+  font-size: 14px;
+  color: #374151;
+`;
+const WritingReadSmallMenuText = styled.span`
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 4px 8px;
+  background: #d1e9fa;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #0090f9;
+`;
 
 
-const WritingRead20 = () => {
+const WritingRead20 = ({name}) => {
     // 리액트 쿼리 훅
+    // 소메뉴 의 name 에 따라 가져오는 데이터가 다르다.
     const data = [
         {
             profile : "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
@@ -303,41 +335,57 @@ const WritingRead20 = () => {
     ]
 
     return (
-        <Wrapper>
-            <Body>
+        <WritingReadLayout>
+            <WritingReadList>
                 {
                     data.map(({profile, nick, score, created_at, like_amount, comment_amount, title })=> (
-                        <Item>
-                            <FirstLine>
-                                <Left>
-                                    <Profile src={profile}/>
-                                    <Nick>{nick}</Nick>
-                                    <Score>
+                        <WritingReadItem>
+                            <WritingReadFirstBox>
+                                <WritingReadFirstLeftBox>
+                                    <WritingReadProfileImg src={profile}/>
+                                    <WritingReadNickText>{nick}</WritingReadNickText>
+                                    <WritingReadScoreText>
                                         <FontAwesomeIcon icon={faBolt}/>
                                         {score}
-                                    </Score>
-                                    <Date>{created_at}</Date>
-                                </Left>
-                                <Right>
-                                    <Like>
-                                        <FontAwesomeIcon icon={faArrowsUpDown}/>&nbsp;0
-                                    </Like>
-                                    <Comment>
-                                        <FontAwesomeIcon icon={faCommentDots}/>&nbsp;0
-                                    </Comment>
-                                </Right>
-                            </FirstLine>
-                            <SecondLine>
-                                <Title>
+                                    </WritingReadScoreText>
+                                    <WritingReadDateText>{created_at}</WritingReadDateText>    
+                                </WritingReadFirstLeftBox>
+                                <WritingReadFirstRightBox>
+                                    <WritingReadAdoptText>
+                                        <FontAwesomeIcon icon={faCircleCheck}/>
+                                    </WritingReadAdoptText>
+                                </WritingReadFirstRightBox>
+                            </WritingReadFirstBox>
+                            <WritingReadSecondBox>
+                                <WritingReadTitleText>
                                     {title}
-                                </Title>
-                            </SecondLine>
-                        </Item>
+                                </WritingReadTitleText>
+                            </WritingReadSecondBox>
+                            <WritingReadThirdBox>
+                                <WritingReadThirdLeftBox>
+                                    <WritingReadSmallMenuText>
+                                        사는얘기
+                                    </WritingReadSmallMenuText>
+                                    <WritingTagRead writingId={1}/>
+                                </WritingReadThirdLeftBox>
+                                <WritingReadThirdRightBox>
+                                    <WritingReadViewsText>
+                                        <FontAwesomeIcon icon={faEye}/>&nbsp;0
+                                    </WritingReadViewsText>
+                                    <WritingReadCommentText>
+                                        <FontAwesomeIcon icon={faCommentDots}/>&nbsp;0
+                                    </WritingReadCommentText>
+                                    <WritingReadLikeText>
+                                        <FontAwesomeIcon icon={faArrowsUpDown}/>&nbsp;0
+                                    </WritingReadLikeText>
+                                </WritingReadThirdRightBox>
+                            </WritingReadThirdBox>
+                        </WritingReadItem>
                     ))
                 }
-            </Body>
+            </WritingReadList>
 
-        </Wrapper>
+        </WritingReadLayout>
     )
 }
 

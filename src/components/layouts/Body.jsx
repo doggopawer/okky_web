@@ -134,7 +134,6 @@ const BodyBugReportText = styled.span`
 `;
 
 function Body ({content}) {
-
     return (
         <BodyLayout>
             <BodyBox>

@@ -2,7 +2,7 @@ import BigMenuRead from "../domains/BigMenuRead";
 import BigMenuShow from "../domains/BigMenuShow";
 import styled from "styled-components";
 import logoImg from "../../resources/okky-munchkin-logo.svg"
-import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 
@@ -158,6 +158,25 @@ const HeaderSignUpLink = styled(Link)`
     display: none;
   }
 `;
+const HeaderModalOpenButton = styled.button`
+  display:none;
+  // 1024px 이하
+  @media only screen and (max-width: 1024px) {}
+  // 768px 이하
+  @media only screen and (max-width: 768px) {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    
+    border: none;
+    background: #fff;
+    margin-right: 10px;
+
+    font-size: 20px;
+    color: #0090f9;
+  }
+`;
+
 
 function Header () {
     return (
@@ -180,7 +199,9 @@ function Header () {
                     <HeaderSignUpLink to={"/sign-up"}>
                         회원가입
                     </HeaderSignUpLink>
-                    <BigMenuShow/>
+                    <HeaderModalOpenButton>
+                        <FontAwesomeIcon icon={faBars} />
+                    </HeaderModalOpenButton>
                 </HeaderRightBox>
             </HeaderBox>
         </HeaderLayout>

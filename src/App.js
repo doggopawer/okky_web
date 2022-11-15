@@ -22,7 +22,6 @@ function App() {
               <Route path="/event" element={<EventPage/>} />
               <Route path="/sign-up" element={<SignUpPage/>} />
               <Route path="/sign-in" element={<SignInPage/>} />
-
           </Routes>
       </BrowserRouter>
   );

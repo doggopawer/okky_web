@@ -49,11 +49,11 @@ const TagRankReadItem = styled.li`
   @media only screen and (max-width: 768px) {
   }
 `;
-const Name = styled.div`
+const TagRankReadNameText = styled.div`
   color: #111827;
   font-weight: 500;
 `
-const Amount = styled.div`
+const TagRankReadAmountText = styled.div`
   color: #0090f9;
   font-weight: 500;
 `
@@ -88,8 +88,8 @@ const TagRankRead = () => {
             {
                 data.map(({name, amount}) => (
                     <TagRankReadItem>
-                       <Name># {name}</Name>
-                        <Amount>{amount}</Amount>
+                       <TagRankReadNameText># {name}</TagRankReadNameText>
+                        <TagRankReadAmountText>{amount}</TagRankReadAmountText>
                     </TagRankReadItem>
                 ))
             }

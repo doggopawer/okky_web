@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MemberCreate from "../../domains/MemberCreate";
 
-const Wrapper = styled.div`
+const SignUpLayout = styled.div`
 
 `;
 
@@ -10,9 +10,9 @@ const Wrapper = styled.div`
 const SignUpContent = () => {
 
     return (
-        <Wrapper>
+        <SignUpLayout>
             <MemberCreate/>
-        </Wrapper>
+        </SignUpLayout>
     )
 }
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMagnifyingGlass, faPencil, faRecycle} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass, faPencil, faRotate} from "@fortawesome/free-solid-svg-icons";
 import WritingRead20 from "./WritingRead20";
 import {Link} from "react-router-dom";
 
@@ -47,12 +47,6 @@ const SmallMenuReadThirdBox = styled.div`
 `;
 const SmallMenuReadFourthBox = styled.div`
   
-`;
-const SmallMenuReadFifthBox = styled.div`
-  height: 38px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 const SmallMenuReadWritingCreateLink = styled(Link)`
   display: inline-block;
@@ -196,9 +190,8 @@ const SmallMenuRead = ({name, description}) => {
             </SmallMenuReadSecondBox>
             <SmallMenuReadThirdBox>
                 <SmallMenuReadResetButton>
-                    <FontAwesomeIcon icon={faRecycle} />
+                    <FontAwesomeIcon icon={faRotate} />
                 </SmallMenuReadResetButton>
-
                 <SmallMenuReadTextAreaBox>
                     <SmallMenuReadTextAreaButton onClick={() => console.log("gd")}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -207,13 +200,8 @@ const SmallMenuRead = ({name, description}) => {
                 </SmallMenuReadTextAreaBox>
             </SmallMenuReadThirdBox>
             <SmallMenuReadFourthBox>
-                <WritingRead20/>
+                <WritingRead20 name={name}/>
             </SmallMenuReadFourthBox>
-            <SmallMenuReadFifthBox>
-                {/*<WritingListPrevious/>*/}
-                {/*<WritingListComplexPaging/>*/}
-                {/*<WritingListNext/>*/}
-            </SmallMenuReadFifthBox>
         </>
 
 
