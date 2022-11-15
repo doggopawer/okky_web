@@ -1,5 +1,4 @@
 import BigMenuRead from "../domains/BigMenuRead";
-import BigMenuShow from "../domains/BigMenuShow";
 import styled from "styled-components";
 import logoImg from "../../resources/okky-munchkin-logo.svg"
 import {faBars, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";

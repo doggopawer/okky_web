@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useState} from "react";
+import produce from "immer";
+import axios from "axios";
 
 const MemberAuthLayout = styled.div`
   width: 100%;
@@ -67,21 +70,59 @@ const MemberAuthSignUpLink = styled(Link)`
 
 const MemberAuth = () => {
     // 리액트 쿼리 훅
+    const navigate = useNavigate();
+
+    const [memberAuthState, setMemberAuthState] = useState(
+        {
+            email : "",
+            password : "",
+        }
+    );
+
+    const handleMemberAuthChange = (e) => {
+        const {name, value} = e.currentTarget;
+        console.log(name, value);
+
+        const nextState = produce(memberAuthState, draftState => {
+            draftState[name] = value;
+        })
+        setMemberAuthState(nextState);
+    }
+
+    const handleMemberAuthClick = async() => {
+        const result = await axios.post("http://localhost:4000/account/member/sign-in", memberAuthState);
+        console.log(result);
+        if(result.data === "비밀번호 불일치") {
+            return;
+        }
+        navigate("/");
+        return;
+    }
+
+
     return (
         <MemberAuthLayout>
             <MemberAuthHead>
                 OKKY 아이디로 로그인
             </MemberAuthHead>
             <MemberAuthParagraph>
-                아이디
+                이메일
             </MemberAuthParagraph>
-            <MemberAuthTextArea/>
+            <MemberAuthTextArea
+                name={"email"}
+                value={memberAuthState.email}
+                onChange={handleMemberAuthChange}
+            />
             <MemberAuthParagraph>
                 비밀번호
             </MemberAuthParagraph>
-            <MemberAuthTextArea/>
+            <MemberAuthTextArea
+                name={"password"}
+                value={memberAuthState.password}
+                onChange={handleMemberAuthChange}
+            />
             <MemberAuthFindAccountLink to={"/find-account"}>계정찾기</MemberAuthFindAccountLink>
-            <MemberAuthButton>
+            <MemberAuthButton onClick={handleMemberAuthClick}>
                 로그인
             </MemberAuthButton>
             <MemberAuthBox2>

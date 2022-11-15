@@ -10,7 +10,6 @@ const WritingFrameLayout = styled.div`
 `
 
 function WritingFrame ({content}) {
-
     return (
         <WritingFrameLayout>
             <Header/>

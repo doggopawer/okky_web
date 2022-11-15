@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useState} from "react";
+import produce from "immer";
+import axios from "axios";
 
 const MemberCreateLayout = styled.div`
   width: 100%;
@@ -83,36 +86,94 @@ const MemberCreateText = styled.span`
 
 const MemberCreate = () => {
     // 리액트 쿼리 훅
+    const navigate = useNavigate();
+
+    const [memberCreateState, setMemberCreateState] = useState(
+    {
+        email : "",
+        password : "",
+        name : "",
+        nick : "",
+        marketing_yn : false,
+        profile_url : ""
+    }
+    );
+
+    const handleMemberCreateChange = (e) => {
+        const {name, value} = e.currentTarget;
+        console.log(name, value);
+
+        if(name === "marketing_yn") {
+            const nextState = produce(memberCreateState, draftState => {
+                draftState[name] = !draftState[name];
+            })
+            setMemberCreateState(nextState);
+            return;
+        }
+
+        const nextState = produce(memberCreateState, draftState => {
+            draftState[name] = value;
+        })
+        setMemberCreateState(nextState);
+    }
+
+    const handleMemberCreateClick = async() => {
+       await axios.post("http://localhost:4000/account/member/sign-up", memberCreateState);
+       navigate("/sign-in");
+       return;
+    }
+
     return (
         <MemberCreateLayout>
             <MemberCreateHead>
                 회원가입에 필요한 기본정보를 입력해주세요.
             </MemberCreateHead>
             <MemberCreateParagraph>
-                아이디
+                이메일
             </MemberCreateParagraph>
-            <MemberCreateTextArea placeholder="4~15자 이내로 입력하세요."/>
+            <MemberCreateTextArea
+                placeholder="munchkin@okky.kr"
+                name={"email"}
+                value={memberCreateState.email}
+                onChange={handleMemberCreateChange}
+            />
             <MemberCreateParagraph>
                 비밀번호
             </MemberCreateParagraph>
-            <MemberCreateTextArea placeholder="최소 6자 이동(알파벳, 숫자 필수)"/>
-            <MemberCreateParagraph>
-                이메일
-            </MemberCreateParagraph>
-            <MemberCreateTextArea placeholder="munchkin@okky.kr"/>
+            <MemberCreateTextArea
+                placeholder="최소 6자 이동(알파벳, 숫자 필수)"
+                name={"password"}
+                value={memberCreateState.password}
+                onChange={handleMemberCreateChange}
+            />
             <MemberCreateParagraph>
                 실명
             </MemberCreateParagraph>
-            <MemberCreateTextArea placeholder="홍길동"/>
+            <MemberCreateTextArea
+                placeholder="홍길동"
+                name={"name"}
+                value={memberCreateState.name}
+                onChange={handleMemberCreateChange}
+            />
             <MemberCreateParagraph>
                 닉네임
             </MemberCreateParagraph>
-            <MemberCreateTextArea placeholder="별명을 알파벳, 한글, 숫자를 20자 이하로 입력해주세요."/>
+            <MemberCreateTextArea
+                placeholder="별명을 알파벳, 한글, 숫자를 20자 이하로 입력해주세요."
+                name={"nick"}
+                value={memberCreateState.nick}
+                onChange={handleMemberCreateChange}
+            />
             <MemberCreateBox>
                 <MemberCreateParagraph>
                     이메일 수신동의
                 </MemberCreateParagraph>
-                <MemberCreateCheck type="checkbox"/>
+                <MemberCreateCheck
+                    type="checkbox"
+                    name={"marketing_yn"}
+                    value={memberCreateState.marketing_yn}
+                    onChange={handleMemberCreateChange}
+                />
             </MemberCreateBox>
             <MemberCreateParagraph2>
                 OKKY에서 주최하는 다양한 이벤트, 정보성 뉴스레터 및 광고 수신여부를 설정할 수 있습니다.
@@ -122,7 +183,7 @@ const MemberCreate = () => {
                 <MemberCreateText>|</MemberCreateText>
                 <MemberCreateLink to={"/policy"}>개인정보처리방침</MemberCreateLink>
             </MemberCreateBox2>
-            <MemberCreateButton>회원가입</MemberCreateButton>
+            <MemberCreateButton onClick={handleMemberCreateClick}>회원가입</MemberCreateButton>
             <MemberCreateBox3>
                 이미 회원이신가요? <MemberCreateLink to={"/sign-in"}>로그인</MemberCreateLink>
             </MemberCreateBox3>

@@ -171,7 +171,7 @@ const SmallMenuRead = ({name, description}) => {
                 </SmallMenuReadZeroBox>
             </SmallMenuReadFirstBox>
             <SmallMenuReadSecondBox>
-                <SmallMenuReadWritingCreateLink>
+                <SmallMenuReadWritingCreateLink to={"/writing-create"}>
                     <FontAwesomeIcon icon={faPencil}/> &nbsp;
                     작성하기
                 </SmallMenuReadWritingCreateLink>
