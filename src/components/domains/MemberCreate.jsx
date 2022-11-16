@@ -119,7 +119,7 @@ const MemberCreate = () => {
 
     const handleMemberCreateClick = async() => {
        await axios.post("http://localhost:4000/account/member/sign-up", memberCreateState);
-       navigate("/sign-in");
+       navigate(`/sign-up/complete/${memberCreateState.nick}`);
        return;
     }
 

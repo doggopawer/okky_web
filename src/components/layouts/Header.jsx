@@ -1,9 +1,17 @@
 import BigMenuRead from "../domains/BigMenuRead";
 import styled from "styled-components";
 import logoImg from "../../resources/okky-munchkin-logo.svg"
-import {faBars, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {
+    faArrowRightFromBracket,
+    faBars,
+    faGear,
+    faMagnifyingGlass,
+    faUser,
+    faWaveSquare
+} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
+import {useState} from "react";
 
 const HeaderLayout = styled.div`
   width: 100%;
@@ -175,9 +183,50 @@ const HeaderModalOpenButton = styled.button`
     color: #0090f9;
   }
 `;
+const HeaderProfileBox = styled.div`
+  position: relative;
+`;
+const HeaderProfileButton = styled.img`
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+`;
+const HeaderProfileTapBox = styled.div`
+  box-sizing: border-box;
+  width: 224px;
+  height: 150px;
+  background: #fff;
+  padding: 12px 40px;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  border-radius: 5px;
+`;
+const HeaderTapItemLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  color: #111827;
+  margin: 15px 0;
+  border-bottom: 1px solid lightgray;
+`;
+
 
 
 function Header () {
+
+    const [headerProfile, setHeaderProfile] = useState(false);
+
+    const handleHeaderProfileClick = () => {
+        setHeaderProfile(!headerProfile);
+    }
+    const handleHeaderLogoutClick = () => {
+        window.localStorage.removeItem("authToken");
+        window.reload();
+    }
+
     return (
         <HeaderLayout>
             <HeaderBox>
@@ -192,12 +241,42 @@ function Header () {
                         </HeaderButton>
                         <HeaderTextArea/>
                     </HeaderRightInnerBox>
-                    <HeaderSignInLink to={"/sign-in"}>
-                        로그인
-                    </HeaderSignInLink>
-                    <HeaderSignUpLink to={"/sign-up"}>
-                        회원가입
-                    </HeaderSignUpLink>
+
+                    {
+                        window.localStorage.authToken ?
+                            <HeaderProfileBox onClick={handleHeaderProfileClick}>
+                                <HeaderProfileButton src={"https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"}/>
+                                {
+                                    headerProfile ?
+                                        <HeaderProfileTapBox>
+                                            <HeaderTapItemLink to={"/my-profile"}>
+                                                <FontAwesomeIcon icon={faUser}/> &nbsp;
+                                                내 프로필
+                                            </HeaderTapItemLink>
+                                            <HeaderTapItemLink to={"/my-account"}>
+                                                <FontAwesomeIcon icon={faGear}/> &nbsp;
+                                                내 계정
+                                            </HeaderTapItemLink>
+                                            <HeaderTapItemLink to={"/my-activity"}>
+                                                <FontAwesomeIcon icon={faWaveSquare}/> &nbsp;
+                                                활동내역
+                                            </HeaderTapItemLink>
+                                            <HeaderTapItemLink onClick={handleHeaderLogoutClick}>
+                                                <FontAwesomeIcon icon={faArrowRightFromBracket}/> &nbsp;
+                                                로그아웃
+                                            </HeaderTapItemLink>
+                                        </HeaderProfileTapBox> : null
+                                }
+                            </HeaderProfileBox>:
+                            <>
+                                <HeaderSignInLink to={"/sign-in"}>
+                                    로그인
+                                </HeaderSignInLink>
+                                <HeaderSignUpLink to={"/sign-up"}>
+                                    회원가입
+                                </HeaderSignUpLink>
+                            </>
+                    }
                     <HeaderModalOpenButton>
                         <FontAwesomeIcon icon={faBars} />
                     </HeaderModalOpenButton>
